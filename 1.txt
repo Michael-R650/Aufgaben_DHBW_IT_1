@@ -1,1 +1,5 @@
 git pull upstream main
+cd Dateipfad ändern
+dc .. ein Pfad zurück gehen
+dc komplett zurück gehen
+.\codename.exe datei ausführen 

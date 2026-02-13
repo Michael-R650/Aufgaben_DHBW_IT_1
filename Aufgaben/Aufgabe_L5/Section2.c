@@ -9,6 +9,7 @@ int main(int argc, char **argv)
     }
     for (int i = 0; i < argc; i++)
     {
-        printf("Argument %d at adress %p has content: %s (length:%d)\n", i, argv[i], argv[i], strlen(argv[i]));
+        // printf("Argument %d at adress %p has content: %s (length:%d)\n", i, argv[i], argv[i], strlen(argv[i]));
+    printf("Argument %d at adress %p has content: %s (length:%d)\n",i,*(argv+i),*(argv+i),strlen(*(argv+i)));
     }
 }
