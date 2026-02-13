@@ -8,6 +8,7 @@ char speicher[MAX_LENGTH];
 void eingabe()
 {
     printf("Please enter your word (max. 100 characters):");
+    //Immer Prüfen, ob etwas Eingelesen wurde
     if (fgets(speicher, sizeof(speicher), stdin) != NULL)
     {
         speicher[strcspn(speicher, "\n")] = '\0';
