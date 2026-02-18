@@ -16,7 +16,7 @@ struct car
     {
         printf("Current Fuel Level: %i\n", p->fuel_level);
     }
- int main()
+int main()
 {
     struct car eins = {100, 14, "Audi A4"};
     refuel(&eins);
