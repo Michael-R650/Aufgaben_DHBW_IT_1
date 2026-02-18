@@ -13,3 +13,4 @@ int main(int argc, char **argv)
     printf("Argument %d at adress %p has content: %s (length:%d)\n",i,*(argv+i),*(argv+i),strlen(*(argv+i)));
     }
 }
+
