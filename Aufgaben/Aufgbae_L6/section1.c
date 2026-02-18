@@ -6,5 +6,6 @@ int main(){
 FILE *datei = fopen("test.txt","w");
 fputc('A',datei);
 fclose(datei);
+printf("H");
 return 0;
 }
