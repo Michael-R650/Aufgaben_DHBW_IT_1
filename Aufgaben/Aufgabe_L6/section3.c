@@ -71,7 +71,7 @@ void output(struct Sensor *sensor, int arraysize)
     }
     if (output == 1)
     {
-        end = sensor->data[3000].time;
+        end = sensor->data[2999].time;
         printf("Start: %.2f s End: %.2f s\n", start, end);
     }
 }
