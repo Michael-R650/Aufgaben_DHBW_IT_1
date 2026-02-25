@@ -3,3 +3,6 @@ cd Dateipfad ändern
 dc .. ein Pfad zurück gehen
 dc komplett zurück gehen
 .\codename.exe datei ausführen 
+Wenn man mehrere Datein compilieren muss, gibt man alle C Datein an : zB. 
+gcc test/testung.c inserts/STRING_UTILS.c -I inserts -o testung.exe
+gcc: compilieren test/testung.c dei Datei inserts/STRING_UTILS.c die andere Datei -I inserts einbettung von dem Ordner inserts -o testung.exe speicherung der auszuführenden Datei
