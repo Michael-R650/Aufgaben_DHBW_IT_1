@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void init_playlist(Playlist *pl) {
+int init_playlist(Playlist *pl) {
     pl->head = NULL;
+    return 0;
 }
 //Zählen der Songs
 int count_songs(Playlist *pl){
@@ -16,13 +17,13 @@ int count_songs(Playlist *pl){
     return count;
 }
 //Song hinten hinzufügen
-void add_song(Playlist *pl, const char *title, const char *artist) {
+int add_song(Playlist *pl, const char *title, const char *artist) {
     if((count_songs(pl))>=(MAX_SONGS)){
         printf("Maximal Anzahl der Songs erreicht\n");
-        return;
+        return 1;
     }else{
 Song *newSong = malloc(sizeof(Song));
-    if (newSong == NULL) return;
+    if (newSong == NULL) return 1;
 
     // Speicher für Strings reservieren und kopieren
     newSong->title = strdup(title);  
@@ -39,10 +40,11 @@ Song *newSong = malloc(sizeof(Song));
         temp->next = newSong;
     }
 }
+return 0;
 }
 //Erster Song löschen
-void delete_firstSong(Playlist *pl) {
-    if (pl->head == NULL) return;
+int delete_firstSong(Playlist *pl) {
+    if (pl->head == NULL) return 1;
 
     Song *temp = pl->head;
     pl->head = pl->head->next;
@@ -51,24 +53,27 @@ void delete_firstSong(Playlist *pl) {
     free(temp->title);
     free(temp->artist);
     free(temp);
+    return 0;
 }
 
 //Ausgeben der ganzen Playlist
-void print_playlist(Playlist *pl) {
+int print_playlist(Playlist *pl) {
     Song *temp = pl->head;
     if (temp == NULL) {
         printf("Die Playlist ist leer.\n");
-        return;
+        return 1;
     }
     while (temp != NULL) {
         printf("Title: %s, Artist: %s\n", temp->title, temp->artist);
         temp = temp->next;
     }
     printf("\n");
+    return 0;
 }
 //Löschen der ganzen Plalist
-void delete_playlist(Playlist *pl) {
+int delete_playlist(Playlist *pl) {
     while (pl->head != NULL) {
         delete_firstSong(pl);
     }
+    return 0;
 }

@@ -10,11 +10,12 @@ typedef struct Song {
 typedef struct Playlist {
     Song *head;
 } Playlist;
+
 //functions
+int init_playlist(Playlist *pl);
 int count_songs(Playlist *pl);
-void init_playlist(Playlist *pl);
-void add_song(Playlist *pl, const char *title, const char *artist);
-void delete_firstSong(Playlist *pl);
-void print_playlist(Playlist *pl);
-void delete_playlist(Playlist *pl);
+int add_song(Playlist *pl, const char *title, const char *artist);
+int delete_firstSong(Playlist *pl);
+int print_playlist(Playlist *pl);
+int delete_playlist(Playlist *pl);
 #endif
